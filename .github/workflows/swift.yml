@@ -1,16 +1,16 @@
-name: Build
+name: Swift
 
-on: pull_request 
+on: pull_request
 
 jobs:
   build:
-    runs-on: macos-11.0
+    runs-on: macos-latest
     timeout-minutes: 30
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with: 
+        with:
           fetch-depth: 0
           lfs: true
           
@@ -23,7 +23,7 @@ jobs:
         run: bundle exec pod install --repo-update
         
       - name: Force select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_12.5.app
+        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
      
       - name: npm install -g danger
         run: npm install -g danger
@@ -34,5 +34,5 @@ jobs:
       - name:  brew install swiftlint
         run:  brew install swiftlint
 
-      - name: Danger 
+      - name: Danger
         run: danger-swift pr
