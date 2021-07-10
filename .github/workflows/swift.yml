@@ -49,6 +49,10 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('Gemfile') }} # change your gemfile path
           restore-keys: |
             ${{ runner.os }}-gems-
+            
+      - name: bundler update
+        run: bundle update --bundler
+
       - uses: MeilCli/danger-action@v5
         with:
           plugins_file: 'Gemfile'
