@@ -5,4 +5,4 @@ import DangerSwiftCoverage // package: https://github.com/f-meloni/danger-swift-
 
 let danger = Danger()
 
-
+Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
