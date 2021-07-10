@@ -1,0 +1,31 @@
+# 참조: https://github.com/realm/SwiftLint
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - yogiyoapp_enterpriseTests
+  - yogiyoapp_enterpriseUITests
+  - yogiyoapp/Vendors
+
+disabled_rules:
+  - variable_name
+  - type_name
+  - function_parameter_count
+  - todo
+  - large_tuple
+  - file_length
+  
+line_length: 200
+
+force_cast: warning
+
+type_body_length:
+  - 500 # warning
+  - 1000 # error
+
+function_body_length:
+  - 100 # warning
+  - 200 # error
+
+cyclomatic_complexity:
+  - 15 # warning
+  - 70 # error

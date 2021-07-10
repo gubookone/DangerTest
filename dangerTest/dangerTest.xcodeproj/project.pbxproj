@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09CFD2BD0DBE3B72FCE56FC7 /* Pods_dangerTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D8B458F8C55D2C24462D31 /* Pods_dangerTest.framework */; };
 		ACC2EFCD2699D72600DC56DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2EFCC2699D72600DC56DD /* AppDelegate.swift */; };
 		ACC2EFCF2699D72600DC56DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2EFCE2699D72600DC56DD /* SceneDelegate.swift */; };
 		ACC2EFD12699D72600DC56DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2EFD02699D72600DC56DD /* ViewController.swift */; };
@@ -15,6 +16,8 @@
 		ACC2EFD92699D72700DC56DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC2EFD72699D72700DC56DD /* LaunchScreen.storyboard */; };
 		ACC2EFE42699D72700DC56DD /* dangerTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2EFE32699D72700DC56DD /* dangerTestTests.swift */; };
 		ACC2EFEF2699D72700DC56DD /* dangerTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2EFEE2699D72700DC56DD /* dangerTestUITests.swift */; };
+		ACC2EFFD2699D89600DC56DD /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2EFFC2699D89600DC56DD /* FirstViewModel.swift */; };
+		ACC2F0002699D8B400DC56DD /* FirstViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2EFFF2699D8B400DC56DD /* FirstViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D64259194AF55873C2A406F /* Pods-dangerTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dangerTest.debug.xcconfig"; path = "Target Support Files/Pods-dangerTest/Pods-dangerTest.debug.xcconfig"; sourceTree = "<group>"; };
+		93AF94196EE123DB15A986EC /* Pods-dangerTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dangerTest.release.xcconfig"; path = "Target Support Files/Pods-dangerTest/Pods-dangerTest.release.xcconfig"; sourceTree = "<group>"; };
+		A3D8B458F8C55D2C24462D31 /* Pods_dangerTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dangerTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC2EFC92699D72600DC56DD /* dangerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dangerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC2EFCC2699D72600DC56DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC2EFCE2699D72600DC56DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,8 @@
 		ACC2EFEA2699D72700DC56DD /* dangerTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dangerTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC2EFEE2699D72700DC56DD /* dangerTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dangerTestUITests.swift; sourceTree = "<group>"; };
 		ACC2EFF02699D72700DC56DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACC2EFFC2699D89600DC56DD /* FirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
+		ACC2EFFF2699D8B400DC56DD /* FirstViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09CFD2BD0DBE3B72FCE56FC7 /* Pods_dangerTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +85,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4512059836193CAB25580C4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3D8B458F8C55D2C24462D31 /* Pods_dangerTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E93F2089EB35FFCEF45760D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D64259194AF55873C2A406F /* Pods-dangerTest.debug.xcconfig */,
+				93AF94196EE123DB15A986EC /* Pods-dangerTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ACC2EFC02699D72600DC56DD = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +110,8 @@
 				ACC2EFE22699D72700DC56DD /* dangerTestTests */,
 				ACC2EFED2699D72700DC56DD /* dangerTestUITests */,
 				ACC2EFCA2699D72600DC56DD /* Products */,
+				6E93F2089EB35FFCEF45760D /* Pods */,
+				4512059836193CAB25580C4B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +128,7 @@
 		ACC2EFCB2699D72600DC56DD /* dangerTest */ = {
 			isa = PBXGroup;
 			children = (
+				ACC2EFFE2699D89A00DC56DD /* VIewModel */,
 				ACC2EFCC2699D72600DC56DD /* AppDelegate.swift */,
 				ACC2EFCE2699D72600DC56DD /* SceneDelegate.swift */,
 				ACC2EFD02699D72600DC56DD /* ViewController.swift */,
@@ -115,6 +145,7 @@
 			children = (
 				ACC2EFE32699D72700DC56DD /* dangerTestTests.swift */,
 				ACC2EFE52699D72700DC56DD /* Info.plist */,
+				ACC2EFFF2699D8B400DC56DD /* FirstViewModelTest.swift */,
 			);
 			path = dangerTestTests;
 			sourceTree = "<group>";
@@ -128,6 +159,14 @@
 			path = dangerTestUITests;
 			sourceTree = "<group>";
 		};
+		ACC2EFFE2699D89A00DC56DD /* VIewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ACC2EFFC2699D89600DC56DD /* FirstViewModel.swift */,
+			);
+			path = VIewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACC2EFF32699D72700DC56DD /* Build configuration list for PBXNativeTarget "dangerTest" */;
 			buildPhases = (
+				99C4A73FC35BC3CB93E6CF20 /* [CP] Check Pods Manifest.lock */,
 				ACC2EFC52699D72600DC56DD /* Sources */,
 				ACC2EFC62699D72600DC56DD /* Frameworks */,
 				ACC2EFC72699D72600DC56DD /* Resources */,
+				C8E0D6E4C64DB8FB0D8C1DDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +294,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		99C4A73FC35BC3CB93E6CF20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dangerTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8E0D6E4C64DB8FB0D8C1DDB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dangerTest/Pods-dangerTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dangerTest/Pods-dangerTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dangerTest/Pods-dangerTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ACC2EFC52699D72600DC56DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +344,7 @@
 				ACC2EFD12699D72600DC56DD /* ViewController.swift in Sources */,
 				ACC2EFCD2699D72600DC56DD /* AppDelegate.swift in Sources */,
 				ACC2EFCF2699D72600DC56DD /* SceneDelegate.swift in Sources */,
+				ACC2EFFD2699D89600DC56DD /* FirstViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC2EFE42699D72700DC56DD /* dangerTestTests.swift in Sources */,
+				ACC2F0002699D8B400DC56DD /* FirstViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +518,7 @@
 		};
 		ACC2EFF42699D72700DC56DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D64259194AF55873C2A406F /* Pods-dangerTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,6 +537,7 @@
 		};
 		ACC2EFF52699D72700DC56DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93AF94196EE123DB15A986EC /* Pods-dangerTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

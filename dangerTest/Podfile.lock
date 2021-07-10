@@ -1,0 +1,16 @@
+PODS:
+  - DPToastView (0.2.2)
+
+DEPENDENCIES:
+  - DPToastView
+
+SPEC REPOS:
+  trunk:
+    - DPToastView
+
+SPEC CHECKSUMS:
+  DPToastView: b8f6571deb5dbba0cfdf0a022c1885eeaaa10971
+
+PODFILE CHECKSUM: 6330cbde368c3f5618af7d0de8bc753bcc6e80c6
+
+COCOAPODS: 1.10.1
