@@ -1,10 +1,8 @@
 import Danger
 import Foundation
-import DangerSwiftHammer // package: https://github.com/el-hoshino/DangerSwiftHammer.git
-
+//import DangerSwiftHammer // package: https://github.com/el-hoshino/DangerSwiftHammer.git
+import DangerSwiftCoverage // package: https://github.com/f-meloni/danger-swift-coverage.git
 
 let danger = Danger()
 
-let file = pathToFile
-let lines = danger.hammer.diffLines(in: file)
-let additions = lines.additions
+
