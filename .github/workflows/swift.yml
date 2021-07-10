@@ -25,14 +25,8 @@ jobs:
       - name: Force select Xcode
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app
      
-      - name: npm install -g danger
-        run: npm install -g danger
-
       - name: brew install danger/tap/danger-swift
         run: brew install danger/tap/danger-swift
-
-      - name:  brew install swiftlint
-        run:  brew install swiftlint
 
       - name: Danger
         run: danger-swift pr
