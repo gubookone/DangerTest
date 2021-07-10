@@ -34,7 +34,7 @@ jobs:
         id: get_branch
 
       - name: Danger
-        run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1
+        run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1 --failOnErrors --no-publish-check
 
   danger:
     runs-on: ubuntu-latest
@@ -49,9 +49,7 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('Gemfile') }} # change your gemfile path
           restore-keys: |
             ${{ runner.os }}-gems-
-            
-      - name: bundler update
-        run: bundle update --bundler
+
 
       - uses: MeilCli/danger-action@v5
         with:
