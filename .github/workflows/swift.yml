@@ -28,16 +28,19 @@ jobs:
       - name: Force select Xcode
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app
      
-      - name: brew install danger/tap/danger-swift
-        run: brew install danger/tap/danger-swift
+      # - name: brew install danger/tap/danger-swift
+      #   run: brew install danger/tap/danger-swift
 
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: get_branch
+      # - name: Extract branch name
+      #   shell: bash
+      #   run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      #   id: get_branch
 
+      - name: xcrun simctl list devices
+        run: xcrun simctl list devices
+        
       - name: xcodebuild
-        run: xcodebuild test -scheme dangerTest -derivedDataPath Build/ -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max' 
+        run: xcodebuild -workspace dangerTest.xcworkspace -scheme dangerTest -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest" -enableCodeCoverage YES test
 
-      - name: Danger
-        run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1 --failOnErrors --no-publish-check
+      # - name: Danger
+      #   run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1 --failOnErrors --no-publish-check
