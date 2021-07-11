@@ -37,7 +37,7 @@ jobs:
         id: get_branch
 
       - name: xcodebuild
-        run: xcodebuild test -scheme dangerTest -derivedDataPath Build/ -enableCodeCoverage YES
+        run: xcodebuild test -scheme dangerTest -derivedDataPath Build/ -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max' 
 
       - name: Danger
         run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1 --failOnErrors --no-publish-check
