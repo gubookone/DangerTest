@@ -14,14 +14,14 @@ SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true, configFil
 //Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
 
-let report = xcov.produce_report(
-  scheme: 'EasyPeasy',
-  workspace: 'Example/EasyPeasy.xcworkspace',
-  exclude_targets: 'Demo.app',
-  minimum_coverage_percentage: 90
-)
-
-# Do some custom filtering with the report here
-
-# Post markdown report
-xcov.output_report(report)
+//let report = xcov.produce_report(
+//  scheme: 'EasyPeasy',
+//  workspace: 'Example/EasyPeasy.xcworkspace',
+//  exclude_targets: 'Demo.app',
+//  minimum_coverage_percentage: 90
+//)
+//
+//# Do some custom filtering with the report here
+//
+//# Post markdown report
+//xcov.output_report(report)
