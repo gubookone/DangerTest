@@ -31,6 +31,9 @@ jobs:
       - name: brew install danger/tap/danger-swift
         run: brew install danger/tap/danger-swift
 
+      - name: gem install danger-xcov
+        run: gem install danger-xcov
+
       - name: Extract branch name
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
