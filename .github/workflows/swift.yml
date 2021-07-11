@@ -23,7 +23,7 @@ jobs:
         run: bundle exec pod install --repo-update
 
       - name: export
-        run: export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+        run: export GITHUB_TOKEN=${{ secrets.ACCESS_TOKEN }}
         
       - name: Force select Xcode
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app
