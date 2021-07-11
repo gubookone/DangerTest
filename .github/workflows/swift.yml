@@ -22,9 +22,7 @@ jobs:
       - name: Pod install
         run: bundle exec pod install --repo-update
 
-      - name: export
-        run: export GITHUB_TOKEN=${{ secrets.ACCESS_TOKEN }}
-        
+       
       - name: Force select Xcode
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app
      
@@ -42,6 +40,9 @@ jobs:
       - name: xcodebuild
         run: xcodebuild -workspace dangerTest.xcworkspace -scheme dangerTest -sdk iphonesimulator -derivedDataPath Build/ -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest" -enableCodeCoverage YES test
 
+      - name: export
+        run: export GITHUB_TOKEN=${{ secrets.ACCESS_TOKEN }}
+       
       - name: Danger
         run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1 --failOnErrors
          
