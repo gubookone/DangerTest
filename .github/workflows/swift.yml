@@ -44,5 +44,5 @@ jobs:
         run: export DANGER_GITHUB_API_TOKEN=${{ secrets.ACCESS_TOKEN }}
        
       - name: Danger
-        run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1 --failOnErrors --no-publish-check
+        run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1
          
