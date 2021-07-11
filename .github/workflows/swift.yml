@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-          
+
       - name: Bundle install
         run: |
           bundle config path vendor/bundle
@@ -36,11 +36,8 @@ jobs:
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: get_branch
 
-      - name: xcrun simctl list devices
-        run: xcrun simctl list devices
-
       - name: xcodebuild
         run: xcodebuild -workspace dangerTest.xcworkspace -scheme dangerTest -sdk iphonesimulator -derivedDataPath Build/ -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest" -enableCodeCoverage YES test
 
       - name: Danger
-        run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1 --failOnErrors 
+        run: danger-swift pr ${{ get_branch }} --failOnErrors 
