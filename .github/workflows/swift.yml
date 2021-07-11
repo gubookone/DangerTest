@@ -40,4 +40,5 @@ jobs:
         run: xcodebuild -workspace dangerTest.xcworkspace -scheme dangerTest -sdk iphonesimulator -derivedDataPath Build/ -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest" -enableCodeCoverage YES test
 
       - name: Danger
-        run: danger-swift pr ${branch} --failOnErrors 
+        run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1 --failOnErrors
+         
