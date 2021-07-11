@@ -25,3 +25,4 @@ SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true, configFil
 //
 //# Post markdown report
 //xcov.output_report(report)
+warn("waring")
