@@ -46,3 +46,5 @@ jobs:
       - name: Danger
         run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1
          
+      - name: Danger ci
+        run: danger-swift ci
