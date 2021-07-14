@@ -45,6 +45,8 @@ jobs:
        
       - name: Danger
         run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          
       - name: Danger ci
         run: danger-swift ci
