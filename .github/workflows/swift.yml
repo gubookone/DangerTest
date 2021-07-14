@@ -37,12 +37,13 @@ jobs:
       - name: xcodebuild
         run: xcodebuild -workspace dangerTest.xcworkspace -scheme dangerTest -sdk iphonesimulator -derivedDataPath Build/ -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest" -enableCodeCoverage YES test
        
-      - name: Danger
-        run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Danger
+      #   run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1
+      #   env:
+      #     
 
       - name: Danger ci
         run: danger-swift ci
         env:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
