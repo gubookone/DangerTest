@@ -6,7 +6,7 @@ import DangerXCodeSummary // package: https://github.com/f-meloni/danger-swift-x
 
 let danger = Danger()
 
-markdown("## New danger.github.pr.head" + danger.github.pr.head)
+markdown("## New danger.github.pr.head" + danger.github.pullRequest.base.ref)
 
 Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
