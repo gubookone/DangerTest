@@ -39,6 +39,9 @@ jobs:
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: get_branch
 
+      - name: find ~ -name "*.txt"
+        run: find . "*.json"
+
       - name: Danger ci
         run: danger-swift ci
         env:
