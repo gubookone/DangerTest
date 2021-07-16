@@ -6,7 +6,7 @@ import DangerXCodeSummary // package: https://github.com/f-meloni/danger-swift-x
 
 let danger = Danger()
 
-XCodeSummary(filePath: "result.json").report()
+XCodeSummary(filePath: "fastlane/test_output/result.json").report()
 
 Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
