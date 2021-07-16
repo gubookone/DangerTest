@@ -8,7 +8,12 @@ import DangerXCodeSummary // package: https://github.com/f-meloni/danger-swift-x
 
 let danger = Danger()
 
-markdown("## New danger.github.pr.head : " + github.pullRequest.base.ref)
+markdown("# New danger.github.pr.head # ")
+
+
+warn("메세지")
+message("메세지")
+
 
 Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
