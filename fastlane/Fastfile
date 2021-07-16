@@ -25,6 +25,7 @@ platform :ios do
          fail_build: false,
          devices: ["iPhone 11 Pro Max"],
          formatter: 'xcpretty-json-formatter',
+         output_files: "result.json",
          clean: true)
   end
 end

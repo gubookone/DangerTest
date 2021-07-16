@@ -26,6 +26,11 @@ jobs:
       - name: Force select Xcode
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app
      
+      - name: Fast
+        uses: maierj/fastlane-action@v2.0.1
+        with:
+          lane: 'custom_lane'
+
       - name: brew install danger/tap/danger-swift
         run: brew install danger/tap/danger-swift
 
@@ -33,11 +38,6 @@ jobs:
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: get_branch
-
-      - name: Fast
-        uses: maierj/fastlane-action@v2.0.1
-        with:
-          lane: 'custom_lane'
 
       - name: Danger ci
         run: danger-swift ci
