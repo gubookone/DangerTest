@@ -6,7 +6,6 @@ import DangerXCodeSummary // package: https://github.com/f-meloni/danger-swift-x
 
 let danger = Danger()
 
-markdown
 
 XCodeSummary(filePath: "./fastlane/test_output/result.json").report()
 
