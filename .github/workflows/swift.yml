@@ -34,9 +34,11 @@ jobs:
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: get_branch
 
-      - name: xcodebuild
-        run: xcodebuild -workspace dangerTest.xcworkspace -scheme dangerTest -sdk iphonesimulator -derivedDataPath Build/ -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest" -enableCodeCoverage YES test | XCPRETTY_JSON_FILE_OUTPUT=result.json xcpretty -f `xcpretty-json-formatter`
-       
+      - name: Fast
+        uses: maierj/fastlane-action@v2.0.1
+        with:
+          lane: 'custom_lane'
+
       - name: Danger ci
         run: danger-swift ci
         env:
