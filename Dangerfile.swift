@@ -6,10 +6,12 @@ import DangerXCodeSummary // package: https://github.com/f-meloni/danger-swift-x
 
 let danger = Danger()
 
-
-XCodeSummary(filePath: "./fastlane/test_output/result.json").report()
+markdown("## New danger.github.pr.head" + danger.github.pr.head)
 
 Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
+
+
+
 
 SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true, configFile: ".swiftlint.yml")
 
