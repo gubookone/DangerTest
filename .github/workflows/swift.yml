@@ -40,7 +40,7 @@ jobs:
         id: get_branch
 
       - name: find ~ -name "*.txt"
-        run: find . "*.json"
+        run: find ~ -name "result"
 
       - name: Danger ci
         run: danger-swift ci
