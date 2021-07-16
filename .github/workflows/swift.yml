@@ -42,10 +42,7 @@ jobs:
       - name: find ~ -name "*.txt"
         run: find ~ -name "result"
 
-      - name: gem install danger-slather
-        run: gem install danger-slather
-
       - name: Danger ci
-        run: danger-swift ci
+        run: danger-swift --help
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
