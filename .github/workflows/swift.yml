@@ -35,15 +35,9 @@ jobs:
         id: get_branch
 
       - name: xcodebuild
-        run: xcodebuild -workspace dangerTest.xcworkspace -scheme dangerTest -sdk iphonesimulator -derivedDataPath Build/ -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest" -enableCodeCoverage YES test
+        run: xcodebuild -workspace dangerTest.xcworkspace -scheme dangerTest -sdk iphonesimulator -derivedDataPath Build/ -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest" -enableCodeCoverage YES test | XCPRETTY_JSON_FILE_OUTPUT=result.json xcpretty -f `xcpretty-json-formatter`
        
-      # - name: Danger
-      #   run: danger-swift pr https://github.com/gubookone/DangerTest/pull/1
-      #   env:
-      #     
-
       - name: Danger ci
         run: danger-swift ci
         env:
-          # DANGER_GITHUB_API_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
