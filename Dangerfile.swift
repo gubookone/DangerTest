@@ -13,7 +13,7 @@ Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true, configFile: ".swiftlint.yml")
 
 
-let summary = XCodeSummary(filePath: "result.json")
+let summary = XCodeSummary(filePath: "./build/reports/errors.json")
 
 if summary.warningsCount > maxWarningsCount {
   fail("There are more than \(maxWarningsCount) warnings")
