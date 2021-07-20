@@ -4,7 +4,7 @@ import DangerSwiftCoverage // package: https://github.com/f-meloni/danger-swift-
 import DangerXCodeSummary // package: https://github.com/f-meloni/danger-swift-xcodesummary.git
 
 
-
+let maxWarningsCount = 300
 
 let danger = Danger()
 
