@@ -8,15 +8,15 @@ import DangerXCodeSummary // package: https://github.com/f-meloni/danger-swift-x
 
 let danger = Danger()
 
-markdown("# New danger.github.pr.head # ")
-
-
-warn("메세지")
-message("메세지")
-
-
 Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
-
 
 SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true, configFile: ".swiftlint.yml")
 
+
+let summary = XCodeSummary(filePath: "Build/Build/reports/error.json")
+
+if summary.warningsCount > maxWarningsCount {
+  fail("There are more than \(maxWarningsCount) warnings"
+}
+
+summary.report()
