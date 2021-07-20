@@ -16,7 +16,7 @@ SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true, configFil
 let summary = XCodeSummary(filePath: "Build/Build/reports/error.json")
 
 if summary.warningsCount > maxWarningsCount {
-  fail("There are more than \(maxWarningsCount) warnings"
+  fail("There are more than \(maxWarningsCount) warnings")
 }
 
 summary.report()
