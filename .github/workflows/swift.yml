@@ -41,7 +41,7 @@ jobs:
         run: PATH="/usr/local/bin:$PATH"
 
       - name: Test
-        run: xcodebuild -workspace dangerTest.xcworkspace -scheme dangerTest -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max'  -derivedDataPath Build/ -enableCodeCoverage YES clean test | xcpretty "--color" -f 'xcpretty-json-formatter' -r json-compilation-database
+        run: xcodebuild -workspace dangerTest.xcworkspace -scheme dangerTest -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max'  -derivedDataPath Build/ -enableCodeCoverage YES clean build test  | xcpretty "--color" -f 'xcpretty-json-formatter' -r json-compilation-database
 
       - name: brew install danger/tap/danger-swift
         run: brew install danger/tap/danger-swift
