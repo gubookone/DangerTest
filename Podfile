@@ -9,3 +9,7 @@ inhibit_all_warnings!
 target 'dangerTest' do
     pod 'DPToastView'
 end
+
+target 'dangerTestTests' do
+    pod 'DPToastView'
+end

@@ -8,10 +8,10 @@
 import Foundation
 
 struct FirstViewModel {
-    
-    
-    
     var testCaseOne: Bool {
         false
+    }
+    var testCaseTwo: String {
+        "testCaseTwo"
     }
 }
