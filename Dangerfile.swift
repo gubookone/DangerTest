@@ -16,12 +16,13 @@ Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
 let arr = danger.git.createdFiles + danger.git.modifiedFiles
 
-let swiftFilesWithCopyright = arr.filter { $0.fileType == .swift && danger.utils.readFile($0).contains("if #available(iOS") }
+let swiftFilesWithCopyright = arr.filter { $0.fileType == .swift }
 
-if swiftFilesWithCopyright.isEmpty {
-    message("없음")
-} else {
-    message("있음")
+swiftFilesWithCopyright.forEach { file in
+    let lines = danger.hammer.diffLines(in: file)
+    let additions = lines.additions
+    
+    message("\(additions)")
 }
 
 
