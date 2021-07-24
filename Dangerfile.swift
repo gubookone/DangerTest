@@ -13,12 +13,10 @@ Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 //SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true, configFile: ".swiftlint.yml")
 
 
-let additions = danger.github.pullRequest.additions
-let deletions = danger.github.pullRequest.deletions
-let commits = danger.github.pullrequest.commits
-message("\(additions)")
-message("\(deletions)")
-message("\(commits)")
+let diff = danger.git.diff ?? []
+
+
+message("\(diff)")
 
 let summary = XCodeSummary(filePath: "./build/reports/errors.json")
 
