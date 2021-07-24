@@ -13,10 +13,16 @@ Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 //SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true, configFile: ".swiftlint.yml")
 
 
-let diff = danger.git.diff ?? []
+let arr = danger.git.createdFiles + danger.git.modifiedFiles
 
+let swiftFilesWithCopyright = arr.filter { $0.fileType == .swift && danger.utils.readFile($0).contains("if #available(iOS") }
 
-message("\(diff)")
+if swiftFilesWithCopyright.isEmpty {
+    message("없음")
+} else {
+    message("있음")
+}
+
 
 let summary = XCodeSummary(filePath: "./build/reports/errors.json")
 
