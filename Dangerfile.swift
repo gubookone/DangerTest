@@ -10,7 +10,13 @@ let danger = Danger()
 
 Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
-SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true, configFile: ".swiftlint.yml")
+//SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true, configFile: ".swiftlint.yml")
+
+
+let diff = danger.git.diff
+message("""
+        \(diff)
+        """)
 
 
 let summary = XCodeSummary(filePath: "./build/reports/errors.json")
