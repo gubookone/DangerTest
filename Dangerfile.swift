@@ -13,7 +13,7 @@ Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 //SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true, configFile: ".swiftlint.yml")
 
 
-let diff = danger.git.diff
+let diff = danger.github.pullRequest.diff
 message("""
         \(diff)
         """)
