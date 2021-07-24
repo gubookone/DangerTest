@@ -2,6 +2,7 @@ import Danger
 import Foundation
 import DangerSwiftCoverage // package: https://github.com/f-meloni/danger-swift-coverage.git
 import DangerXCodeSummary // package: https://github.com/f-meloni/danger-swift-xcodesummary.git
+import DangerSwiftHammer // package: https://github.com/el-hoshino/DangerSwiftHammer.git
 
 
 let maxWarningsCount = 300
