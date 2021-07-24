@@ -11,7 +11,13 @@ struct FirstViewModel {
     var testCaseOne: Bool {
         false
     }
+    
     var testCaseTwo: String {
-        "testCaseTwo"
+        if #available(iOS 13.0, *) {
+            return "testCaseTwo"
+        } else {
+            return "testCaseTwo"
+        }
+        return "testCaseTwo"
     }
 }
