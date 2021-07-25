@@ -22,7 +22,7 @@ swiftFilesWithCopyright.forEach { file in
     let lines = danger.hammer.diffLines(in: file)
     let additions = lines.additions.map { $0.contains("if #available(iOS")}
     
-    if additions.isEmpty != false {
+    if additions.isEmpty == false {
         message("""
                 OS 버전을 분기하는 코드가 들어가 있네요.
                 티켓에 명시하는거 잊지 마세요~

@@ -9,6 +9,10 @@ import Foundation
 
 struct FakeViewModel {
     var fakeOne: Bool {
-        return false
+        if #available(iOS 13.0, *) {
+            return false
+        } else {
+            return true
+        }
     }
 }
