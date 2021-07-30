@@ -2,6 +2,7 @@ import Danger
 import Foundation
 import DangerSwiftCoverage // package: https://github.com/f-meloni/danger-swift-coverage.git
 import DangerXCodeSummary // package: https://github.com/f-meloni/danger-swift-xcodesummary.git
+import DangerSwiftHammer // package: https://github.com/el-hoshino/DangerSwiftHammer.git
 
 
 let maxWarningsCount = 300
@@ -15,12 +16,18 @@ Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
 let arr = danger.git.createdFiles + danger.git.modifiedFiles
 
-let swiftFilesWithCopyright = arr.filter { $0.fileType == .swift && danger.utils.readFile($0).contains("if #available(iOS") }
+let swiftFilesWithCopyright = arr.filter { $0.fileType == .swift }
 
-if swiftFilesWithCopyright.isEmpty {
-    message("없음")
-} else {
-    message("있음")
+swiftFilesWithCopyright.forEach { file in
+    let lines = danger.hammer.diffLines(in: file)
+    let additions = lines.additions.map { $0.contains("if #available(iOS")}
+    
+    if additions.isEmpty == false {
+        message("""
+                OS 버전을 분기하는 코드가 들어가 있네요.
+                티켓에 명시하는거 잊지 마세요~
+                """)
+    }
 }
 
 

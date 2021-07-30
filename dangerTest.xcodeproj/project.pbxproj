@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09CFD2BD0DBE3B72FCE56FC7 /* Pods_dangerTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D8B458F8C55D2C24462D31 /* Pods_dangerTest.framework */; };
+		AC3BBC6526AC7A710053A9EC /* FakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3BBC6426AC7A710053A9EC /* FakeViewModel.swift */; };
 		ACC2EFCD2699D72600DC56DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2EFCC2699D72600DC56DD /* AppDelegate.swift */; };
 		ACC2EFCF2699D72600DC56DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2EFCE2699D72600DC56DD /* SceneDelegate.swift */; };
 		ACC2EFD12699D72600DC56DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2EFD02699D72600DC56DD /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 		1D64259194AF55873C2A406F /* Pods-dangerTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dangerTest.debug.xcconfig"; path = "Target Support Files/Pods-dangerTest/Pods-dangerTest.debug.xcconfig"; sourceTree = "<group>"; };
 		93AF94196EE123DB15A986EC /* Pods-dangerTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dangerTest.release.xcconfig"; path = "Target Support Files/Pods-dangerTest/Pods-dangerTest.release.xcconfig"; sourceTree = "<group>"; };
 		A3D8B458F8C55D2C24462D31 /* Pods_dangerTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dangerTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC3BBC6426AC7A710053A9EC /* FakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeViewModel.swift; sourceTree = "<group>"; };
 		ACC2EFC92699D72600DC56DD /* dangerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dangerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC2EFCC2699D72600DC56DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC2EFCE2699D72600DC56DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				ACC2EFFC2699D89600DC56DD /* FirstViewModel.swift */,
+				AC3BBC6426AC7A710053A9EC /* FakeViewModel.swift */,
 			);
 			path = VIewModel;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE3244E26A1B018009A5038 /* FirstViewController.swift in Sources */,
+				AC3BBC6526AC7A710053A9EC /* FakeViewModel.swift in Sources */,
 				ACC2EFD12699D72600DC56DD /* ViewController.swift in Sources */,
 				ACC2EFCD2699D72600DC56DD /* AppDelegate.swift in Sources */,
 				ACC2EFCF2699D72600DC56DD /* SceneDelegate.swift in Sources */,

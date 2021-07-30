@@ -9,7 +9,7 @@ import Foundation
 
 struct FirstViewModel {
     var testCaseOne: Bool {
-        false
+        true
     }
     
     var testCaseTwo: String {
