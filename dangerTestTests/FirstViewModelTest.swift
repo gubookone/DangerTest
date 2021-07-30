@@ -20,8 +20,6 @@ class FirstViewModelTest: XCTestCase {
 
     func testExample() throws {
 
-        let sut = FirstViewModel()
-        XCTAssertFalse(sut.testCaseOne)
     }
 
     func testPerformanceExample() throws {
