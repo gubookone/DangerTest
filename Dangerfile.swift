@@ -4,6 +4,7 @@ import DangerSwiftCoverage // package: https://github.com/f-meloni/danger-swift-
 import DangerXCodeSummary // package: https://github.com/f-meloni/danger-swift-xcodesummary.git
 import DangerSwiftHammer // package: https://github.com/el-hoshino/DangerSwiftHammer.git
 import DangerShellExecutor
+import Logger
 
 
 let maxWarningsCount = 300
@@ -44,4 +45,6 @@ summary.report()
 
 
 
-try executor.spawn("env", arguments: [])
+let swiftC = try executor.spawn("command -v swiftc", arguments: [])
+
+    logger.debug("Running: \(swiftC) \(args.joined(separator: " "))")
