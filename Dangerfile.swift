@@ -18,12 +18,11 @@ Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
 
 
-let swiftC = try executor.spawn("env", arguments: [])
-print(swiftC)
+//let swiftC = try executor.spawn("echo ${{ }}", arguments: [])
+//print(swiftC)
 
-
-danger.gitlab.api.addLabels('Label 1', 'Label 2');
-
+print(ProcessInfo.processInfo.environment["IS_GITHUB"] as? String)
+ 
 
 
 let summary = XCodeSummary(filePath: "./build/reports/errors.json")
