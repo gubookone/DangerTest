@@ -13,24 +13,17 @@ let executor = ShellExecutor()
 
 Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
-//SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true, configFile: ".swiftlint.yml")
 
 
-//let arr = danger.git.createdFiles + danger.git.modifiedFiles
-//
-//let swiftFilesWithCopyright = arr.filter { $0.fileType == .swift }
-//
-//swiftFilesWithCopyright.forEach { file in
-//    let lines = danger.hammer.diffLines(in: file)
-//    let additions = lines.additions.map { $0.contains("if #available(iOS")}
-//
-//    if additions.isEmpty == false {
-//        message("""
-//                OS 버전을 분기하는 코드가 들어가 있네요.
-//                티켓에 명시하는거 잊지 마세요~
-//                """)
-//    }
-//}
+
+
+
+let swiftC = try executor.spawn("env", arguments: [])
+print(swiftC)
+
+
+danger.gitlab.api.addLabels('Label 1', 'Label 2');
+
 
 
 let summary = XCodeSummary(filePath: "./build/reports/errors.json")
@@ -40,9 +33,3 @@ if summary.warningsCount > maxWarningsCount {
 }
 
 summary.report()
-
-
-
-
-let swiftC = try executor.spawn("env", arguments: [])
-print(swiftC)
