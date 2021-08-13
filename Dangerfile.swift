@@ -18,7 +18,7 @@ Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
 
 
-let swiftC = try executor.execute("curl \ -H \"Accept: application/vnd.github.v3+json\" \ \"https://api.github.com/repos/gubookone/DangerTest/ \" ", arguments: [])
+let swiftC = try executor.execute("curl -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/repos/gubookone/DangerTest/'", arguments: [])
 print(swiftC)
 
 
