@@ -18,10 +18,10 @@ Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
 
 
-//let swiftC = try executor.spawn("echo ${{ }}", arguments: [])
-//print(swiftC)
+let swiftC = try executor.execute("curl \ -H \"Accept: application/vnd.github.v3+json\" \ \"https://api.github.com/repos/gubookone/DangerTest/ \" ", arguments: [])
+print(swiftC)
 
-print(ProcessInfo.processInfo.environment["IS_GITHUB"] as? String)
+
  
 
 
