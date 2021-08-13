@@ -22,7 +22,8 @@ let swiftC = try executor.execute("curl -H 'Accept: application/vnd.github.v3+js
 print(swiftC)
 
 
- 
+let env = try executor.execute("env", arguments: [])
+print(env)
 
 
 let summary = XCodeSummary(filePath: "./build/reports/errors.json")
