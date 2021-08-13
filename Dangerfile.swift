@@ -25,6 +25,11 @@ print(swiftC)
 let env = try executor.execute("env", arguments: [])
 print(env)
 
+let number = "echo \"PR number = ${{ github.event.pull_request.number }}\"
+
+
+let env2 = try executor.execute(number, arguments: [])
+print(env2)
 
 let summary = XCodeSummary(filePath: "./build/reports/errors.json")
 
