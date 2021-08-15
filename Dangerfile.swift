@@ -36,22 +36,23 @@ let executor = ShellExecutor()
 //print(env2)
 ////
 
-//if let token = ProcessInfo.processInfo.environment["GITHUB_TOKEN"],
-//   let number = ProcessInfo.processInfo.environment["PR_NUMBER"] {
-//    let script = "curl -v -X POST -H 'Accept: application/vnd.github.v3+json' -H 'Authorization: token \(token)' -H \"Content-Type: application/json\" -d {\"labels\":[\"bug\"]} https://api.github.com/repos/gubookone/DangerTest/issues/\(number)/labels"
-//    print(" sh = \(script)")
-//    let env = try? executor.execute(script, arguments: [])
-//}
-
-
-
 if let token = ProcessInfo.processInfo.environment["GITHUB_TOKEN"],
    let number = ProcessInfo.processInfo.environment["PR_NUMBER"] {
-    let script = "curl -v -H 'Accept: application/vnd.github.v3+json' -H 'Authorization: token \(token)' -H \"Content-Type: application/json\" https://api.github.com/repos/gubookone/DangerTest/pulls"
+    let script = "curl -v -X POST -H 'Accept: application/vnd.github.v3+json' -H 'Authorization: token \(token)' -H \"Content-Type: application/json\" -d '{\"labels\":[\"bug\"]}' https://api.github.com/repos/gubookone/DangerTest/issues/\(number)/labels"
     
     let env = try? executor.execute(script, arguments: [])
     print(" sh = \(env)")
 }
+
+
+
+//if let token = ProcessInfo.processInfo.environment["GITHUB_TOKEN"],
+//   let number = ProcessInfo.processInfo.environment["PR_NUMBER"] {
+//    let script = "curl -v -H 'Accept: application/vnd.github.v3+json' -H 'Authorization: token \(token)' -H \"Content-Type: application/json\" https://api.github.com/repos/gubookone/DangerTest/pulls"
+//
+//    let env = try? executor.execute(script, arguments: [])
+//    print(" sh = \(env)")
+//}
 
 
 //let env2 = executor.execute("curl -H 'Accept: application/vnd.github.v3+json' -H 'Authorization: token $GITHUB_TOKEN' -X POST -d {'labels':'bug'} https://api.github.com/repos/gubookone/DangerTest/issues/$PR_NUMBER/labels" , arguments: [])
