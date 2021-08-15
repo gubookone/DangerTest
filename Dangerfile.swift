@@ -13,10 +13,10 @@ let executor = ShellExecutor()
 
 //Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
-
-if let number = ProcessInfo.processInfo.environment["PR_NUMBER"] as? String {
-    print(" PR number = \(number)")
-}
+//
+//if let number = ProcessInfo.processInfo.environment["PR_NUMBER"] as? String {
+//    print(" PR number = \(number)")
+//}
 
 
 
@@ -26,8 +26,8 @@ if let number = ProcessInfo.processInfo.environment["PR_NUMBER"] as? String {
 //print(swiftC)
 
 //
-let env = try executor.execute("env", arguments: [])
-print(env)
+//let env = try executor.execute("env", arguments: [])
+//print(env)
 //
 //let number = "curl -SSL -H Accept: application/vnd.github.v3+json -H Authorization: token $GITHUB_TOKEN -X POST -H 'Content-Type: application/json' -d '{\"labels\":[\"bug\"]}' https://api.github.com/repos/gubookone/DangerTest/issues/$PR_NUMBER/labels"
 
@@ -36,10 +36,12 @@ print(env)
 //print(env2)
 ////
 
+let token = ProcessInfo.processInfo.environment["GITHUB_TOKEN"]
+let number = ProcessInfo.processInfo.environment["PR_NUMBER"] as? Int ?? 0
+let script = "curl -H 'Accept: application/vnd.github.v3+json' -H 'Authorization: token \(token)' -X POST -d {'labels':'bug'} https://api.github.com/repos/gubookone/DangerTest/issues/\(number)/labels"
+print(script)
 
-let echo = try executor.execute("echo 'This action will add the label to the PR ${$PR_NUMBER}'", arguments: [])
-print(echo)
-
+let env = try? executor.execute(script, arguments: [])
 
 //let env2 = executor.execute("curl -H 'Accept: application/vnd.github.v3+json' -H 'Authorization: token $GITHUB_TOKEN' -X POST -d {'labels':'bug'} https://api.github.com/repos/gubookone/DangerTest/issues/$PR_NUMBER/labels" , arguments: [])
 //print(env2)
