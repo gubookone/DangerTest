@@ -13,7 +13,7 @@ let executor = ShellExecutor()
 
 //Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
-
+print(ProcessInfo.processInfo.environment)
 
 
 
