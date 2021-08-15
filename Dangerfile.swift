@@ -22,8 +22,8 @@ let executor = ShellExecutor()
 //print(swiftC)
 
 //
-//let env = try executor.execute("env", arguments: [])
-//print(env)
+let env = try executor.execute("env", arguments: [])
+print(env)
 //
 //let number = "curl -SSL -H Accept: application/vnd.github.v3+json -H Authorization: token $GITHUB_TOKEN -X POST -H 'Content-Type: application/json' -d '{\"labels\":[\"bug\"]}' https://api.github.com/repos/gubookone/DangerTest/issues/$PR_NUMBER/labels"
 
@@ -33,7 +33,7 @@ let executor = ShellExecutor()
 ////
 
 
-let echo = try executor.execute("echo 'This action will add the label to the PR ${PR_NUMBER}'", arguments: [])
+let echo = try executor.execute("echo 'This action will add the label to the PR ${$PR_NUMBER}'", arguments: [])
 print(echo)
 
 
