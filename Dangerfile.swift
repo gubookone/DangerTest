@@ -13,7 +13,11 @@ let executor = ShellExecutor()
 
 //Coverage.xcodeBuildCoverage(.derivedDataFolder("Build"), minimumCoverage: 90)
 
-print(ProcessInfo.processInfo.environment)
+
+if let number = ProcessInfo.processInfo.environment["PR_NUMBER"] as? String {
+    print(" PR number = \(number)")
+}
+
 
 
 
