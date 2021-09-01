@@ -19,9 +19,14 @@ platform :ios do
   desc "Description of what the lane does"
   lane :custom_lane do
 
-    command = "git add . && git commit -m \"Run crawler and update current data\""
-    sh(command, log: true, error_callback: ->(result) { })
-    push_to_git_remote
+    scan(workspace: "dangerTest.xcworkspace",
+         scheme: "dangerTest",
+         code_coverage: true,
+         derived_data_path: "./Build",
+         fail_build: false,
+         devices: ["iPhone 11 Pro Max"],
+         formatter: 'xcpretty-json-formatter',
+         clean: true)
 
 
   end

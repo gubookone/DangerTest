@@ -6,6 +6,8 @@ jobs:
   build:
     runs-on: macos-latest
     timeout-minutes: 30
+    env:
+      IS_GITHUB: ${{ secrets.ACCESS_TOKEN }}
 
     steps:
       - name: Checkout
