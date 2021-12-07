@@ -22,6 +22,11 @@ class FirstViewModelTest: XCTestCase {
 
     }
 
+    func testExample2() throws {
+        let sut = FirstViewModel()
+        XCTAssertTrue(sut.testCaseThree)
+    }
+
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
