@@ -22,7 +22,6 @@ platform :ios do
     scan(workspace: "dangerTest.xcworkspace",
          scheme: "dangerTest",
          code_coverage: true,
-         derived_data_path: "./Build",
          fail_build: false,
          devices: ["iPhone 11 Pro Max"],
          formatter: 'xcpretty-json-formatter',
