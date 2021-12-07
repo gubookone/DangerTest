@@ -1,14 +1,7 @@
 name: Swift
 
-on: 
-  pull_request:
-    
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Tag Version'     
-        required: true
-        default: '1.1.0'
+on: [pull_request, workflow_dispatch]
+
 
 jobs:
   build:
@@ -47,10 +40,6 @@ jobs:
         with:
           lane: 'custom_lane'
 
-      - name: brew install danger/tap/danger-swift
-        run: brew install danger/tap/danger-swift
-
-      - name: Danger ci
-        run: danger-swift ci
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload Code Coverage
+        run: |
+          bash <(curl -s https://codecov.io/bash)
