@@ -20,4 +20,25 @@ struct FirstViewModel {
         }
         return "testCaseTwo"
     }
+
+    var testCaseThree: Bool {
+        true
+    }
+
+    var testCaseFour: Bool {
+        false
+    }
+
+    var testCaseFive: Bool {
+        true
+    }
+
+    var testCaseSix: Bool {
+        true
+    }
+
+    var testCaseSeven: Bool {
+        false
+    }
+
 }
