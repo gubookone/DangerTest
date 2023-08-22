@@ -1,15 +1,12 @@
 name: Swift
 
-on: [pull_request, workflow_dispatch]
-
+on: [push, workflow_dispatch]
 
 jobs:
-  build:
+  checkout:
     runs-on: macos-latest
     timeout-minutes: 30
-    env:
-      PR_NUMBER: ${{ github.event.pull_request.number }}
-
+ 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -17,29 +14,14 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: ruby 2,7    
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7
-          bundler-cache: true
-
+  bundle:
+    runs-on: macos-latest
+    needs: checkout
+    timeout-minutes: 30
+    
+    steps:
       - name: Bundle install
         run: |
-          bundle config path vendor/bundle
           bundle install
+   
 
-      - name: Pod install
-        run: bundle exec pod install --repo-update
-
-       
-      - name: Force select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
-     
-      - name: Fast
-        uses: maierj/fastlane-action@v2.0.1
-        with:
-          lane: 'custom_lane'
-
-      - name: Upload Code Coverage
-        run: |
-          bash <(curl -s https://codecov.io/bash)
